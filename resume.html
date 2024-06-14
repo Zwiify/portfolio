@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" id="work-link">WORK</a></li>
+                <li><a href="demoreel.html" id="demoreel-link">DEMOREEL</a></li>
+                <li><a href="resume.html" id="resume-link" class="active">RESUME</a></li>
+                <li><a href="contact.html" id="contact-link">CONTACT</a></li>
+            </ul>
+            <div class="profile-menu">
+                <img src="images/profile.png" alt="Profile" class="profile-icon">
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/charline-perrin/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com/mimosarelle/?igsh=ejRvNWtxZzg4bGw3&utm_source=qr" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="https://www.artstation.com/charline9" target="_blank"><img src="images/artstation.png" alt="ArtStation"></a>
+                <a href="mailto:mimosarelle@gmail.com" target="_blank"><img src="images/email.png" alt="Email"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>RESUME</h1>
+        </section>
+        <section class="resume">
+            <div class="resume-container">
+                <div class="profile-pic">
+                    <img src="images/profilepicture.png" alt="Profile Picture" class="profile-pic-img">
+                </div>
+                <div class="resume-text">
+                    <p>Hi I'm Charline! I'm a 3rd year 2D animation student searching for an internship this summer. I am willing to learn in lots of different areas of the animation pipeline; I particularly enjoy animating and designing characters.</p>
+                    <p>If you are interested, you can download my resume below.</p>
+                    <p>Thank you for your attention!</p>
+                </div>
+            </div>
+            <div class="resume-preview">
+                <a href="javascript:void(0);" onclick="openLightbox();">
+                    <img src="images/ENGresume.png" alt="Resume" class="resume-img">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox();">
+        <span class="close cursor" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img src="images/ENGresume.png" alt="Resume" class="lightbox-img">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

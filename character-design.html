@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Design</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="character-design">
+    <header id="header">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" id="work-link">WORK</a></li>
+                <li><a href="demoreel.html" id="demoreel-link">DEMOREEL</a></li>
+                <li><a href="resume.html" id="resume-link">RESUME</a></li>
+                <li><a href="contact.html" id="contact-link">CONTACT</a></li>
+            </ul>
+            <div class="profile-menu">
+                <img src="images/profile.png" alt="Profile" class="profile-icon">
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/charline-perrin/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com/mimosarelle/?igsh=ejRvNWtxZzg4bGw3&utm_source=qr" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="https://www.artstation.com/charline9" target="_blank"><img src="images/artstation.png" alt="ArtStation"></a>
+                <a href="mailto:mimosarelle@gmail.com" target="_blank"><img src="images/email.png" alt="Email"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>CHARACTER DESIGN</h1>
+        </section>
+        <section class="gallery">
+            <div class="gallery-item character1">
+                <img src="images/character1.png" alt="Character 1" onclick="openLightbox(); currentSlide(1)">
+                <p class="image-title">Character 1</p>
+            </div>
+            <div class="gallery-item character2">
+                <img src="images/character2.png" alt="Character 2" onclick="openLightbox(); currentSlide(2)">
+                <p class="image-title">Character 2</p>
+            </div>
+            <div class="gallery-item character3">
+                <img src="images/character3.png" alt="Character 3" onclick="openLightbox(); currentSlide(3)">
+                <p class="image-title">Character 3</p>
+            </div>
+            <div class="gallery-item character4">
+                <img src="images/character4.png" alt="Character 4" onclick="openLightbox(); currentSlide(4)">
+                <p class="image-title">Character 4</p>
+            </div>
+            <div class="gallery-item character5">
+                <img src="images/character5.png" alt="Character 5" onclick="openLightbox(); currentSlide(5)">
+                <p class="image-title">Character 5</p>
+            </div>
+            <div class="gallery-item character6">
+                <img src="images/character6.png" alt="Character 6" onclick="openLightbox(); currentSlide(6)">
+                <p class="image-title">Character 6</p>
+            </div>
+            <div class="gallery-item character7">
+                <img src="images/character7.png" alt="Character 7" onclick="openLightbox(); currentSlide(7)">
+                <p class="image-title">Character 7</p>
+            </div>
+            <div class="gallery-item character8">
+                <img src="images/character8.png" alt="Character 8" onclick="openLightbox(); currentSlide(8)">
+                <p class="image-title">Character 8</p>
+            </div>
+        </section>
+        <section class="portfolio">
+            <div class="portfolio-item">
+                <a href="background-layout.html">
+                    <img src="images/background-layout.png" alt="Background & Layout">
+                    <div class="overlay">
+                        <div class="text">BACKGROUND & LAYOUT</div>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="projects.html">
+                    <img src="images/projects.png" alt="Projects">
+                    <div class="overlay">
+                        <div class="text">PROJECTS</div>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="personal.html">
+                    <img src="images/personal.png" alt="Personal">
+                    <div class="overlay">
+                        <div class="text">PERSONAL</div>
+                    </div>
+                </a>
+            </div>
+        </section>        
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close cursor" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <div class="mySlides">
+                <div class="numbertext">1 / 8</div>
+                <img src="images/character1.png" alt="Character 1" class="lightbox-img lightbox-img-1">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">2 / 8</div>
+                <img src="images/character2.png" alt="Character 2" class="lightbox-img lightbox-img-2">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">3 / 8</div>
+                <img src="images/character3.png" alt="Character 3" class="lightbox-img lightbox-img-3">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">4 / 8</div>
+                <img src="images/character4.png" alt="Character 4" class="lightbox-img lightbox-img-4">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">5 / 8</div>
+                <img src="images/character5.png" alt="Character 5" class="lightbox-img lightbox-img-5">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">6 / 8</div>
+                <img src="images/character6.png" alt="Character 6" class="lightbox-img lightbox-img-6">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">7 / 8</div>
+                <img src="images/character7.png" alt="Character 7" class="lightbox-img lightbox-img-7">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">8 / 8</div>
+                <img src="images/character8.png" alt="Character 8" class="lightbox-img lightbox-img-8">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

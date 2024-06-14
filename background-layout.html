@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background & Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="background-layout">
+    <header id="header">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" id="work-link">WORK</a></li>
+                <li><a href="demoreel.html" id="demoreel-link">DEMOREEL</a></li>
+                <li><a href="resume.html" id="resume-link">RESUME</a></li>
+                <li><a href="contact.html" id="contact-link">CONTACT</a></li>
+            </ul>
+            <div class="profile-menu">
+                <img src="images/profile.png" alt="Profile" class="profile-icon">
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/charline-perrin/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com/mimosarelle/?igsh=ejRvNWtxZzg4bGw3&utm_source=qr" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="https://www.artstation.com/charline9" target="_blank"><img src="images/artstation.png" alt="ArtStation"></a>
+                <a href="mailto:mimosarelle@gmail.com" target="_blank"><img src="images/email.png" alt="Email"></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>BACKGROUND & LAYOUT</h1>
+        </section>
+        <section class="gallery">
+            <!-- Gallery items for Background & Layout -->
+            <!-- Repeat the div below for each image -->
+            <div class="gallery-item background1">
+                <img src="images/background1.png" alt="Background 1" onclick="openLightbox(); currentSlide(1)">
+                <p class="image-title">Background 1</p>
+            </div>
+            <!-- Add 15 more images similarly -->
+            <div class="gallery-item background2">
+                <img src="images/background2.png" alt="Background 2" onclick="openLightbox(); currentSlide(2)">
+                <p class="image-title">Background 2</p>
+            </div>
+            <!-- Continue adding images up to background16.png -->
+        </section>
+        <section class="portfolio">
+            <div class="portfolio-item">
+                <a href="character-design.html">
+                    <img src="images/character-design.png" alt="Character Design">
+                    <div class="overlay">
+                        <div class="text">CHARACTER DESIGN</div>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="projects.html">
+                    <img src="images/projects.png" alt="Projects">
+                    <div class="overlay">
+                        <div class="text">PROJECTS</div>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="personal.html">
+                    <img src="images/personal.png" alt="Personal">
+                    <div class="overlay">
+                        <div class="text">PERSONAL</div>
+                    </div>
+                </a>
+            </div>
+        </section>        
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close cursor" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <!-- Lightbox slides for Background & Layout -->
+            <div class="mySlides">
+                <div class="numbertext">1 / 16</div>
+                <img src="images/background1.png" alt="Background 1" class="lightbox-img lightbox-img-1">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">2 / 16</div>
+                <img src="images/background2.png" alt="Background 2" class="lightbox-img lightbox-img-2">
+            </div>
+            <!-- Continue adding slides up to background16.png -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,708 @@
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mode clair (par défaut) */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode header {
+    background-color: transparent;
+}
+
+body.light-mode header.sticky {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.light-mode .nav-links a {
+    color: #ffffff;
+}
+
+body.light-mode .social-links img {
+    filter: brightness(0) invert(1); /* Blanc */
+}
+
+/* Mode sombre */
+body.dark-mode {
+    background-color: #1d1f23;
+    color: #ffffff;
+}
+
+body.dark-mode header {
+    background-color: transparent;
+}
+
+body.dark-mode header.sticky {
+    background-color: #26292e;
+    box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .nav-links a {
+    color: #ffffff;
+}
+
+body.dark-mode header.sticky .nav-links a {
+    color: #ffffff; /* Rester en blanc même quand sticky */
+}
+
+body.dark-mode .social-links img {
+    filter: brightness(0) invert(1); /* Blanc */
+}
+
+body.dark-mode header.sticky .social-links img {
+    filter: brightness(0) invert(1); /* Blanc même quand sticky */
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s, padding 0.3s;
+    background-color: transparent;
+    padding: 25px 0;
+}
+
+header.sticky {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header.sticky .nav-links a {
+    color: #003366; /* Bleu très foncé */
+}
+
+.nav-links a.active {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.profile-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 60px; /* Taille agrandie */
+    height: 60px; /* Taille agrandie */
+}
+
+.social-links {
+    display: flex;
+}
+
+.social-links a {
+    margin: 0 10px;
+}
+
+.social-links img {
+    width: 20px; /* Taille réduite des icônes des réseaux sociaux */
+    height: 20px; /* Taille réduite des icônes des réseaux sociaux */
+    filter: brightness(0) invert(1); /* Blanc */
+}
+
+header.sticky .social-links img {
+    filter: brightness(0) saturate(100%) hue-rotate(190deg) brightness(50%); /* Appliquer la couleur bleu très foncé */
+}
+
+main {
+    padding-top: 100px; /* Ajuster selon la hauteur du header */
+}
+
+.hero {
+    background: url('images/header-background.png') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 50px 0;
+    color: white;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    position: relative; /* Add this to position the overlay */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the color and opacity as needed */
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin: 0;
+    z-index: 2; /* Ensure text is above the overlay */
+}
+
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Styles communs pour tous les boutons de navigation */
+.portfolio-item {
+    position: relative;
+    margin: 10px;
+    transition: transform 0.3s;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 128, 0.5);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay .text {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Styles spécifiques pour la page d'accueil */
+.index .portfolio-item {
+    width: 300px; /* Taille des éléments sur la page d'accueil */
+    height: 300px;
+}
+
+.index .overlay {
+    background-color: rgba(0, 0, 128, 0.5);
+    width: 300px; /* Taille des éléments sur la page Character Design */
+    height: 300px;
+}
+
+/* Styles spécifiques pour la page Character Design */
+.character-design .portfolio-item {
+    width: 300px; /* Taille des éléments sur la page Character Design */
+    height: 300px;
+}
+
+.character-design .overlay {
+    background-color: rgba(0, 0, 128, 0.5);
+    width: 300px; /* Taille des éléments sur la page Character Design */
+    height: 300px;
+}
+
+/* Styles spécifiques pour la page Background Layout */
+.background-layout .portfolio-item {
+    width: 300px; /* Taille des éléments sur la page Background Layout */
+    height: 300px;
+}
+
+.background-layout .overlay {
+    background-color: rgba(0, 0, 128, 0.5);
+    width: 300px; /* Taille des éléments sur la page Background Layout */
+    height: 300px;
+}
+
+/* Styles spécifiques pour la page Projects */
+.projects .portfolio-item {
+    width: 300px; /* Taille des éléments sur la page Projects */
+    height: 300px;
+}
+
+.projects .overlay {
+    background-color: rgba(0, 0, 128, 0.5);
+    width: 300px; /* Taille des éléments sur la page Projects */
+    height: 300px;
+}
+
+/* Styles spécifiques pour la page Personal */
+.personal .portfolio-item {
+    width: 300px; /* Taille des éléments sur la page Personal */
+    height: 300px;
+}
+
+.personal .overlay {
+    background-color: rgba(0, 0, 128, 0.5);
+    width: 300px; /* Taille des éléments sur la page Personal */
+    height: 300px;
+}
+
+
+
+.demoreel {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -6px;
+}
+
+.video-container iframe {
+    width: 70%;
+    height: 470px; /* Adjusted height for smaller display */
+}
+
+.demoreel-text {
+    font-size: 0.8em;
+    color: #333;
+}
+
+.resume, .contact-form {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Styles pour la section contact */
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Aligner les éléments en colonne */
+    padding: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column; /* Aligner les éléments en colonne */
+    width: 100%;
+    max-width: 600px; /* Limiter la largeur du formulaire */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%; /* Occuper toute la largeur disponible */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em; /* Ajuster la taille de la police */
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0056b3;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 50px;
+    align-self: center; /* Centrer le bouton */
+}
+
+.contact-form button:hover {
+    background-color: #003d99;
+}
+
+/* Nouvelle section pour plus de contenu */
+.additional-content {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.additional-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.additional-content p {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Styles pour la galerie */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    margin: 10px;
+}
+
+/* Styles individuels pour chaque character */
+.gallery-item.character1 img {
+    width: 1300px; /* Ajuster la taille individuellement */
+    height: auto;
+}
+
+.gallery-item.character2 img {
+    width: auto; /* Ajuster la taille individuellement */
+    height: 350px;
+}
+
+.gallery-item.character3 img {
+    width: auto; /* Ajuster la taille individuellement */
+    height: 350px;
+}
+
+.gallery-item.character4 img {
+    width: 1300px; /* Ajuster la taille individuellement */
+    height: auto;
+}
+
+.gallery-item.character5 img {
+    width: auto; /* Ajuster la taille individuellement */
+    height: 350px;
+}
+
+.gallery-item.character6 img {
+    width: auto; /* Ajuster la taille individuellement */
+    height: 350px;
+}
+
+.gallery-item.character7 img {
+    width: auto; /* Ajuster la taille individuellement */
+    height: 350px;
+}
+
+.gallery-item.character8 img {
+    width: auto; /* Ajuster la taille individuellement */
+    height: 350px;
+}
+
+.gallery-item img {
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Ajout d'une transition pour un effet fluide */
+}
+
+.gallery-item:hover img {
+    transform: scale(1); /* Légère augmentation de la taille */
+}
+
+.image-title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #333;
+}
+
+/* Navigation buttons at the bottom */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.nav-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #003d99;
+}
+
+.resume {
+    text-align: center;
+    padding: 50px;
+}
+
+.resume-container {
+    display: flex;
+    align-items: flex-start; /* Alignement en haut */
+    justify-content: flex-start; /* Alignement à gauche */
+    text-align: left; /* Assurez-vous que le texte est aligné à gauche */
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    margin-right: 120px; /* Ajuster l'espacement entre la photo de profil et le texte */
+}
+
+.profile-pic-img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+}
+
+.resume-text {
+    max-width: 600px;
+    text-align: center; /* Assurez-vous que le texte est aligné à gauche */
+}
+
+.resume-preview {
+    margin-top: 60px;
+}
+
+.resume-img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.resume-img:hover {
+    transform: scale(1.01);
+}
+
+/* Styles pour la lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    padding: 0px;
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100%); /* Assurez-vous que le contenu utilise toute la hauteur disponible */
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Assure que l'image ne soit pas rognée */
+    z-index: 1; /* Z-index de l'image */
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures the image is fully visible without cropping */
+}
+
+.lightbox-img-1 {
+    max-height: 100vh; /* Taille spécifique pour la première image */
+}
+
+.lightbox-img-2 {
+    max-height: 100vh; /* Taille spécifique pour la deuxième image */
+}
+
+.lightbox-img-3 {
+    max-height: 100vh; /* Taille spécifique pour la troisième image */
+}
+
+.lightbox-img-4 {
+    max-height: 100vh; /* Taille spécifique pour la quatrième image */
+}
+
+.lightbox-img-5 {
+    max-height: 100vh; /* Taille spécifique pour la cinquième image */
+}
+
+.lightbox-img-6 {
+    max-height: 100vh; /* Taille spécifique pour la sixième image */
+}
+
+.lightbox-img-7 {
+    max-height: 100vh; /* Taille spécifique pour la septième image */
+}
+
+.lightbox-img-8 {
+    max-height: 100vh; /* Taille spécifique pour la huitième image */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 1000; /* Z-index de la close button */
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styles pour les flèches */
+.prev, .next {
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: rgb(255, 255, 255);
+    background-color: black; /* Couleur de fond noir */
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+    user-select: none;
+    z-index: 1000; /* Z-index des flèches */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Augmenter l'opacité lorsque la souris est proche */
+.prev:hover, .next:hover {
+    opacity: 0.8;
+
+}
+
+.numbertext {
+    color: white;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Styles des liens de navigation */
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    position: relative; /* Position relative pour les pseudo-éléments */
+    padding: 10px 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Commence à 0 pour l'effet de soulignement */
+    height: 2px;
+    display: block;
+    background: #fff;
+    transition: width 0.3s ease, left 0.3s ease; /* Ajout de transition sur la propriété left */
+    left: 0;
+    bottom: -5px; /* Ajustez selon votre besoin */
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%; /* Étend l'animation à 100% */
+    left: 0;
+}
+
+.nav-links a.active::after {
+    background: #fff; /* Assurez-vous que la couleur est correcte pour l'état actif */
+}
+
+/* Ajoutez des styles pour l'effet de soulignement progressif */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 0; /* Commence à 0 pour l'effet de soulignement */
+    height: 2px;
+    display: block;
+    background: #fff;
+    transition: width 0.3s ease, left 0.3s ease; /* Ajout de transition sur la propriété left */
+    left: 0;
+    bottom: -5px; /* Ajustez selon votre besoin */
+}
+
+.nav-links a:hover::before {
+    width: 100%; /* Étend l'animation à 100% */
+    left: 0;
+}
+
+.nav-links a.active::before {
+    width: 100%;
+    left: 0;
+    background: #fff; /* Assurez-vous que la couleur est correcte pour l'état actif */
+}
+
+.nav-links a:not(:hover)::after,
+.nav-links a:not(:hover)::before {
+    width: 0; /* Réduisez la largeur à 0 pour l'effet d'effacement */
+    left: 0%; /* Déplacez à droite pour commencer l'animation de droite à gauche */
+}
